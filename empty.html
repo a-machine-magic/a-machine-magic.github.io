@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+        <!-- CSS Code for Styling -->
+        <script type="text/javascript" src="../D3/d3.js"></script>
+        <style> 
+        title{color:gray;} 
+        h1{color:white;background:silver;text-align: center}
+        p{color:black;}
+        img{text-align: center}
+
+        </style>
+
+<title>Interactive Data Visualization</title> 
+
+</head>
+
+
+<body>
+<!-- body was left empty to make use of d3 library all body components were added below -->
+</body>
+
+
+<!-- This is the Title of the Page, body was selected, h1 was created, and filled with text of Title -->
+<script type="text/javascript"> d3.select("body").append("h1").text(
+	"Interactive Data Visualization");</script>
+
+
+<!-- This is the content of the page, body was selected, p(paragraph) was created, and filled with text -->
+<script type="text/javascript"> d3.select("body").append("p").text(
+
+"This is a page created for the first assignment in the IDE course. An empty html file was created, a title was added to the page, a style section was added to the header of the page which changed the color of the title, a small intresting image was added to the page, another small intresting image was added to the page using only javascript outside of the body section, and an unordered list of links to interactive visualizations was also added.")</script>
+
+
+
+<!-- This is the image that was added outside of the body -->
+<script type="text/javascript"> d3.select("body").append("img").attr("src", 'http://www.sacred-geometry.com/about/intro_to_sacred_geometry/flower_of_life.jpg').attr('width', "20%").attr('height', 'auto').attr('align','left');</script>
+
+
+<!-- This was the first image that was added  -->
+<div style="text-align: right;">
+<img src="http://www.spiraloflight.com/golden1c.jpg" width='20%' height="auto" alt=""></div>
+
+
+<!-- This is an unorder list of links to visualizations -->
+<ul>
+ <li> <a href="http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/">Billion-Dollar-O-Gram-2013</a>
+ </li>
+
+ <li> <a href="https://www.windytv.com/?55.342,6.350,5">Global Wind Patterns</a>
+ </li>
+
+</ul>
+</html>
 
