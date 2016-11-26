@@ -1,55 +1,89 @@
 <!DOCTYPE html>
     <html>
         <head>
-        <!-- CSS Code for Styling -->
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.js"></script>
-        <style> 
-        title{color:gray;} 
-        h1{color:white;background:silver;text-align: center}
-        p{color:black;}
-        img{text-align: center}
+             <style> 
+    /*              CSS Code for Styling*/                    
+                    title{color:gray;} 
+                    h1{color:white;background:silver;text-align: center}
+                    p{color:black;}
+                    .picl{width: 25%; float:left;}
+                    .picr{width: 25%; float:right;}
 
-        </style>
-
-<title>Interactive Data Visualization</title> 
-
-</head>
-
-
-<body>
-<!-- body was left empty to make use of d3 library all body components were added below -->
-</body>
-
-
-<!-- This is the Title of the Page, body was selected, h1 was created, and filled with text of Title -->
-<script type="text/javascript"> d3.select("body").append("h1").text(
-	"Interactive Data Visualization");</script>
-
-
-<!-- This is the content of the page, body was selected, p(paragraph) was created, and filled with text -->
-<script type="text/javascript"> d3.select("body").append("p").text(
-
-"This is a page created for the first assignment in the IDE course. An empty html file was created, a title was added to the page, a style section was added to the header of the page which changed the color of the title, a small intresting image was added to the page, another small intresting image was added to the page using only javascript outside of the body section, and an unordered list of links to interactive visualizations was also added.")</script>
+             </style>
+            
+                <script type="text/javascript" src="../D3/d3.js">
+                    // loads D3.js 
+                </script>
+                
+                <script>
+                    window.onload = function (){
+                        var pic = document.createElement("img");
+                        pic.src = "http://www.sacred-geometry.com/about/intro_to_sacred_geometry/flower_of_life.jpg";
+                        pic.className = 'picr'
+                        document.getElementById('container').appendChild(pic);
+                    }
+                </script>
 
 
 
-<!-- This is the image that was added outside of the body -->
-<script type="text/javascript"> d3.select("body").append("img").attr("src", 'http://www.sacred-geometry.com/about/intro_to_sacred_geometry/flower_of_life.jpg').attr('width', "20%").attr('height', 'auto').attr('align','left');</script>
+                <title>Interactive Data Visualization, DIKU 2016</title> 
+
+        </head>
+
+        <body>
+
+           <h1> Interactie Data Exploration </h1>
+
+               <p>
+                   This is a page created for the first assignment in the IDE course. An empty html file was created, a title was added to the page, a style section was added to the header of the page which changed the color of the title, a small intresting image was added to the page, another small intresting image was added to the page using only javascript outside of the body section, and an unordered list of links to interactive visualizations was also added.
+               </p>
+
+                       <div>
+        <ul>
+
+             <li> 
+
+                <a href="http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/">Billion-Dollar-O-Gram-2013</a>
+
+             </li>
+
+                <p> This interactive visualization attemtps to illustrate the size and scope of billion dollar markets. It attempts to show not only private sector market activity, but also off the book industries like organized crime, as well as trying to capture foreign national debts.</p>
+                <p>A couple of the things this visualization does well is using channels that are able to caputre a sense of what the raw data reflects. For instance, the visualization relies on space i.e. spatial dimensions to compare and contrast how large an economic entity is compared to another. For example, the visulzation has a large gray block for devloping countries foreign debt at $4900 billion, which is an astonomical amount compared to say OPEC's revenue which is around $1027 billion. Moreover, the visualization is able to distinguish market activity that is debt from market activity that is revenue by relying on colors. </p> 
+                <p>Although the visualization is pretty sophisticated, one of the negative aspects of it is that it is limited in visualizing the breakdown of the market activity it reflects. For instance, there is a block in the visualization that reflects $364 billion for the Worldwide TV Industry. The visualzation would benefit from being able to take a block like this one and delve deeper into who and what is contributing to the total amount in a visual way. Instead, the visualization relies on providing links to relevant webpagegs that may contain more data.</p>
+
+             <li> 
+
+                <a href="https://www.windytv.com/?55.342,6.350,5">Global Wind Patterns</a>
+
+                    <p> This interactive visualization illustrates real time weather pattern data across the globe. It shows weather patterns for wind, temperature, cloud activity, rain & snow, and even oceanic activity and atmospheric pressure. </p> 
+                    <p>This visualzation does an excellent job at visualizing weather data. Someone with no prior experince interpreting weather maps could easily tinker with this visualization and determine what areas are raining, where it is windy, etc. This visualization works becuase its output is intuitivley understood, something like this would work great in a classroom of students who are learning the basics of weather and weather patterns.The color schemes that are used to reflect rain, wind, pressure, etc, all have a legend on the right hand corner that is easily understood.</p>
+                    <p>The only negtaive aspect of this visualization is that the toolkit is not really intuitive and there doesn't seem to be a guide on how to use it. Only after tinkering with it for a bit, does the visualization scheme begin to make sense.</p>
+             </li>
+
+        </ul>
+        <div>
+            <h2>
+                Interactive Visualization After Course is finished:
+            </h2>
+            <p> In the vein of the Billion-Dollar-O-Gram, after the course is finished I would like to build an interactive visualization that could capture the full breadth and depth of the global media market. For practical purposes in building such a model, I would limit the scope of the project to the Hollywood film indsutry for starters, and if the project is successful, then scale up accordingly.</p>
+            <p>The project would entail collecting data from websources like IMdB and BoxOffice mojo to create a database of films with an comprehensive list of features like title, director, actor, genre, rating, production company, budget, revenue,  etc. </p>
+            <p> The goal of this project would be to create a digital platform where a person could visualzie market activity and discover on their own any relevant patterns or trends in media production and distribution. For instance, how many films were of a particular genre, what types of films have the best ROI (return on investment), what are shared qualities of films that flopped, etc. </p>
+            <p>This type of tool would be tailored to hollywood film executives, producers, and investors, who currently use non- Big Data schemes to make their production decisions on the fly. By being able to intrepret market trends, the goal is to empower content producers to increase their margins by catering to what the market wants, and not necessairly what they think the market wants. But, this tool could also benefit students stuyding market visualzations and media production as well. </p>
+            <p>Currently, the illustration for this visualization is still being considered.</p>
+            
+        </div>
 
 
-<!-- This was the first image that was added  -->
-<div style="text-align: right;">
-<img src="http://www.spiraloflight.com/golden1c.jpg" width='20%' height="auto" alt=""></div>
 
 
-<!-- This is an unorder list of links to visualizations -->
-<ul>
- <li> <a href="http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/">Billion-Dollar-O-Gram-2013</a>
- </li>
+        </div>
 
- <li> <a href="https://www.windytv.com/?55.342,6.350,5">Global Wind Patterns</a>
- </li>
+               <div id = 'container'> <img class = 'picl' src="http://www.spiraloflight.com/golden1c.jpg"></div>
 
-</ul>
-</html>
+        </body><br/>
 
+
+
+        <!-- This is an unorder list of links to visualizations -->
+
+        </html>
