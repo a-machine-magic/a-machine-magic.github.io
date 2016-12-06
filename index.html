@@ -4,25 +4,15 @@
              <style> 
     /*              CSS Code for Styling*/                    
                     title{color:gray;} 
-                    h1{color:white;background:silver;text-align: center}
+                    h1{color:black;background:aliceblue;text-align: center}
                     p{color:black;}
+ 
                     .picl{width: 25%; float:left;}
                     .picr{width: 25%; float:right;}
 
              </style>
-            
-                <script type="text/javascript" src="../D3/d3.js">
-                    // loads D3.js 
-                </script>
-                
-                <script>
-                    window.onload = function (){
-                        var pic = document.createElement("img");
-                        pic.src = "http://www.sacred-geometry.com/about/intro_to_sacred_geometry/flower_of_life.jpg";
-                        pic.className = 'picr'
-                        document.getElementById('container').appendChild(pic);
-                    }
-                </script>
+           	<script src="https://d3js.org/d3.v3.min.js"></script>
+           	<div style="background-color:aliceblue;"></div> 
 
 
 
@@ -31,59 +21,165 @@
         </head>
 
         <body>
+        
 
-           <h1> Interactie Data Exploration </h1>
+            <div>
+              
+           <h1 s> How has the weather changed over the past 100 years? </h1>
+           <h2> Weather Data Source</h2>
 
                <p>
-                   This is a page created for the first assignment in the IDE course. An empty html file was created, a title was added to the page, a style section was added to the header of the page which changed the color of the title, a small intresting image was added to the page, another small intresting image was added to the page using only javascript outside of the body section, and an unordered list of links to interactive visualizations was also added.
+                   The following is an attempt to visualize weather data provided by NASA's Goddard Instiute for Space Studies. The data measures temperature values in <a href="http://data.giss.nasa.gov/cgi-bin/gistemp/show_station.cgi?id=425724940000&dt=1&ds=14">San Francisco, California from 1880 to 2016.</a> 
                </p>
 
-                       <div>
-        <ul>
+            </div> 
+            <h2>Simple Attempt</h1>
+            <p>Due to a lack of skill and not being adept at javascript, a simple graph was attempted but, I was not able to successfully implement it. The attempt was from a script I ran and I just could not get it to work, nor was I able to undestand the intuition behind the scripting. I come from a python enviornment so I'm use to using the matplotlib enviornment which is a bit more intuitive for me at this point.</p>The script I tried to run is commented in the html document. 
 
-             <li> 
+            <div>
+<!--             <script>
 
-                <a href="http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/">Billion-Dollar-O-Gram-2013</a>
+				source: https://bl.ocks.org/d3noob/402dd382a51a4f6eea487f9a35566de0
+				 
+				// Set the dimensions of the canvas / graph
+				var	margin = {top: 30, right: 20, bottom: 30, left: 50},
+					width = 600 - margin.left - margin.right,
+					height = 270 - margin.top - margin.bottom;
+				
+				 
+				// Set the ranges
+				var	x = d3.time.scale().range([0, width]);
+				var	y = d3.scale.linear().range([height, 0]);
+				 
+				// Define the axes
+				var	xAxis = d3.svg.axis().scale(x)
+					.orient("bottom").ticks(5);
+				 
+				var	yAxis = d3.svg.axis().scale(y)
+					.orient("left").ticks(5);
+				 
+				// Define the line
+				var	valueline = d3.svg.line()
+					.x(function(d) { return x(d.date); })
+					.y(function(d) { return y(d.close); });
+				    
+				// Adds the svg canvas
+				var	svg = d3.select("body")
+					.append("svg")
+						.attr("width", width + margin.left + margin.right)
+						.attr("height", height + margin.top + margin.bottom)
+					.append("g")
+						.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+				 
+				// Get the data
+				d3.csv("data.csv", function(error, data) {
+					data.forEach(function(d) {
+						d.date = parseDate(d.date);
+						d.close = +d.close;
+					});
+				 
+					// Scale the range of the data
+					x.domain(d3.extent(data, function(d) { return d.date; }));
+					y.domain([0, d3.max(data, function(d) { return d.close; })]);
+				 
+					// Add the valueline path.
+					svg.append("path")	
+						.attr("class", "line")
+						.attr("d", valueline(data));
+				 
+					// Add the X Axis
+					svg.append("g")		
+						.attr("class", "x axis")
+						.attr("transform", "translate(0," + height + ")")
+						.call(xAxis);
+				 
+					// Add the Y Axis
+					svg.append("g")		
+						.attr("class", "y axis")
+						.call(yAxis);
+				 
+				});
+				 
+			</script> -->
+            	
 
-             </li>
 
-                <p> This interactive visualization attemtps to illustrate the size and scope of billion dollar markets. It attempts to show not only private sector market activity, but also off the book industries like organized crime, as well as trying to capture foreign national debts.</p>
-                <p>A couple of the things this visualization does well is using channels that are able to caputre a sense of what the raw data reflects. For instance, the visualization relies on space i.e. spatial dimensions to compare and contrast how large an economic entity is compared to another. For example, the visulzation has a large gray block for devloping countries foreign debt at $4900 billion, which is an astonomical amount compared to say OPEC's revenue which is around $1027 billion. Moreover, the visualization is able to distinguish market activity that is debt from market activity that is revenue by relying on colors. </p> 
-                <p>Although the visualization is pretty sophisticated, one of the negative aspects of it is that it is limited in visualizing the breakdown of the market activity it reflects. For instance, there is a block in the visualization that reflects $364 billion for the Worldwide TV Industry. The visualzation would benefit from being able to take a block like this one and delve deeper into who and what is contributing to the total amount in a visual way. Instead, the visualization relies on providing links to relevant webpagegs that may contain more data.</p>
 
-             <li> 
+            </div>
 
-                <a href="https://www.windytv.com/?55.342,6.350,5">Global Wind Patterns</a>
 
-                    <p> This interactive visualization illustrates real time weather pattern data across the globe. It shows weather patterns for wind, temperature, cloud activity, rain & snow, and even oceanic activity and atmospheric pressure. </p> 
-                    <p>This visualzation does an excellent job at visualizing weather data. Someone with no prior experince interpreting weather maps could easily tinker with this visualization and determine what areas are raining, where it is windy, etc. This visualization works becuase its output is intuitivley understood, something like this would work great in a classroom of students who are learning the basics of weather and weather patterns.The color schemes that are used to reflect rain, wind, pressure, etc, all have a legend on the right hand corner that is easily understood.</p>
-                    <p>The only negtaive aspect of this visualization is that the toolkit is not really intuitive and there doesn't seem to be a guide on how to use it. Only after tinkering with it for a bit, does the visualization scheme begin to make sense.</p>
-             </li>
+             <h2> Adapted Visualization</h2>
+             		<p>
+             		The following visualization was an attempt to use an already established visulaization found <a href="http://cacheflow.ca/blog/">here.</a> This particular interactive visualization used data from Kickstarter to visualize trends in Kickstarter campaigns. The main idiom being used in this case was a stacked bar graph. The goal was to adapt the weather data set and simply feed it into this pipeline but, the actual application of this proved to be quite tedious. Due to a lack of time and a limited knowledge of javascript & D3, the visualization as is will be submitted, but the analysis will treat this an an example of what not to do with data visualization.
+             		</p>
+             <div>
+             	<h4>Problems with Programming</h4>
+		             <ul>
+		             	<li>The first issue dealt with adapting the dataset from a text file into a csv and making sure that it was similar in composition to the way the original code was privy to. Python was used to replace outliers with averages and this information was written to a csv.</li></br>
+		             	<li>There was an issue trying to understand how the code actually operated. It used a lot of advanced javascript mapping functions, but eventually the data from the SF temperature could be read into the script.
+		             	</li></br>
+		             	<li>There was an issue trying to set the labels and the scale of both the x and y axis and this was due to the amount of data in the dataset, which caused problems on how to label them. Originally, there was a bunch of years in the x axis that were really cluttered and didn't reveal any information. I opted to remove the information completely. 
+		             	</li>
+		             	</br>
+		             	<li>The graph was supposed to be interactive were you could switch between stacked and grouped bar graph, but it did not work. This might have to do with way certain variables were established and called from the original dataset.</li>
 
-        </ul>
-        <div>
-            <h2>
-                Interactive Visualization After Course is finished:
-            </h2>
-            <p> In the vein of the Billion-Dollar-O-Gram, after the course is finished I would like to build an interactive visualization that could capture the full breadth and depth of the global media market. For practical purposes in building such a model, I would limit the scope of the project to the Hollywood film indsutry for starters, and if the project is successful, then scale up accordingly.</p>
-            <p>The project would entail collecting data from websources like IMdB and BoxOffice mojo to create a database of films with an comprehensive list of features like title, director, actor, genre, rating, production company, budget, revenue,  etc. </p>
-            <p> The goal of this project would be to create a digital platform where a person could visualzie market activity and discover on their own any relevant patterns or trends in media production and distribution. For instance, how many films were of a particular genre, what types of films have the best ROI (return on investment), what are shared qualities of films that flopped, etc. </p>
-            <p>This type of tool would be tailored to hollywood film executives, producers, and investors, who currently use non- Big Data schemes to make their production decisions on the fly. By being able to intrepret market trends, the goal is to empower content producers to increase their margins by catering to what the market wants, and not necessairly what they think the market wants. But, this tool could also benefit students stuyding market visualzations and media production as well. </p>
-            <p>Currently, the illustration for this visualization is still being considered.</p>
+		             </ul>
+             </div>
+
+             <div>
+	             <h4>Problems with Visualization</h4>
+		             <ul>
+		             	<li>
+		             	The main problem aside from the aesthetical ones mentioned below, is that this idiom doesn't really allow for the data to be intuitively represented. Hypothetically, if the appropriate labels had been put into place, the tabular model still doesn't allow for a viewer to understand what they are looking at. One of the points that this example elucidates is the importance of choosing and idiom that fits the data. By looking at this graph at first glance, I have absolutely no idea of how the average weather has changed from 1880 to 2016 on a monthly basis.
+		             	</li>
+		             	</br>
+
+		             	<li>
+		             		The visualization has no labels on the x-axis, and misleading labels on the y-axis, this is in part due to the programming. But, as a general rule of thumb, it is best practice to have labels on all of your axis, otherwise a viewer will have absolutely no idea what they are looking at, or at what scale they are looking at it. Which is clearly the case in this example. 
+		             	</li>
+		             	</br>
+		             	<li>
+		             		The color channels in this visualization are also all over the place. They are a cacophony of color that makes it increasingly difficult to distinguish what is going on with the values. 
+		             	</li>
+
+		             </ul>
+		      </div>
+
+		      <div>
+
+	             <h3>Conclusion:</h3>
+	             	
+	             	<p>
+	             	The value this exercise provides is that it is a good illustration of what not to do when visualizing. The first major problem was that I was dealing with a codeset that was pretty complex to begin with, which having little experience in Javascript, made it that much more difficult. So I guess the first takeaway is to start with what you know and start simple. The second takeaway was that it is important to consider how your dataset can be best represented visually, and decide what the visualization should look like before you commit anything to code. If you do what I did here and just take an off the shelf solution and throw it at a dataset hoping that it will work, your going to have a terrible time through that process and you're going to end up with a subpar visualization.
+	             	</p>
+
+	             </div>
             
-        </div>
+
+             
+
+
+            <div id="chart-svg" style="background-color:#cbefe5">  </div>  
+
+
+     		<div>
+            	
+            	<h1>Individual Question</h1>
+            	<p><h4>Question: So far we've only taught static visualizations. Which dynamic elements or interactions could improve your article? A mock up is welcome.</h4> 
+            	Although I wasn't able to fully execute this idea in practice, the idea of being able to see different line graphs acording to month (x) and temperature(y) across generations, where generation where each year from 1880-2016, seems to be like a good way to allow a user to interact with the data. By allowing them to scroll through each year as illustrated in the image below, this would provide them with a degree of interactivity that would allow them to explore the data set a little better. You can couple this with the idea of multiple views and include a small tabular like graph that summarizes the key features in each graph (assuming a fuller data set: min temp, max temp, sunrise, sunset, wind speed, precipitation etc.) and points to the relevant location on the graph in which it appears. The idea is to allow users to access these generations at will by creating a continuous stream of visuals they could go through. 
 
 
 
+            	</p>
+            	<img src="mock.jpg" width="30%" style="display: block; margin: 0 auto;">
+            </div>
+            
+             	
 
-        </div>
-
-               <div id = 'container'> <img class = 'picl' src="http://www.spiraloflight.com/golden1c.jpg"></div>
-
+<script type="text/javascript" src="d3kickchart.js"></script>
+<!-- <script type="text/javascript" src="visual1.js"></script> -->
         </body><br/>
+		
 
-
-
-        <!-- This is an unorder list of links to visualizations -->
 
         </html>
