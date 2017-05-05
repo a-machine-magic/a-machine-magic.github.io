@@ -1,1 +1,1 @@
-# a-machine-magic.github.io
+Aritificial Intelligence = Cognitive Technologies
