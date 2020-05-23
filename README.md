@@ -1,1 +1,1 @@
-Aritificial Intelligence = Cognitive Technologies
+
